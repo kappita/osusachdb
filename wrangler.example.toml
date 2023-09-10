@@ -1,0 +1,9 @@
+name = "my-app"
+compatibility_date = "2023-01-01"
+main = "src/index.ts"
+# development environment
+[vars]
+ENV = ""
+LIBSQL_URL = ""
+LIBSQL_TOKEN = ""
+SECRET_KEY = ""
