@@ -3,6 +3,8 @@ import { cors} from 'hono/cors'
 import { createClient } from "@libsql/client/web";
 import career from './career/infrastructure/routes';
 import teacher from './teacher/infrastructure/routes';
+import course from './course/infrastructure/routes';
+import section from './section/infrastructure/routes';
 const app = new Hono<{ Bindings: Bindings}>()
 app.use(cors())
 app.get("/", async (c) => {
@@ -18,4 +20,6 @@ app.get("/", async (c) => {
 
 app.route("/careers", career)
 app.route("/teachers", teacher)
+app.route("/courses", course)
+app.route("/sections", section)
 export default app
