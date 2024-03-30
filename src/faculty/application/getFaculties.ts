@@ -1,9 +1,8 @@
-import { Client } from "@libsql/client/web"
+import { Client } from "@libsql/client/web";
 
-export async function getCourseById(id: string, db: Client) {
-  const query = await db.execute(`SELECT * FROM course;`)
-  const data = query.rows
 
+export async function getFaculties(db: Client) {
+  const query = await db.execute(`SELECT * FROM faculty;`)
   if (query.rows.length === 0) {
     return {
       success: false,
@@ -16,6 +15,6 @@ export async function getCourseById(id: string, db: Client) {
     success: true,
     message: "Course retrieved successfully",
     status: 200,
-    payload: data
+    payload: query.rows
   }
 }

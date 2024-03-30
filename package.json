@@ -5,7 +5,9 @@
   },
   "dependencies": {
     "@libsql/client": "^0.3.3-pre.2",
-    "hono": "^3.5.4"
+    "@tsndr/cloudflare-worker-jwt": "^2.5.1",
+    "hono": "^3.5.4",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230821.0",

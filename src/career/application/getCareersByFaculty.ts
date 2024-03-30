@@ -1,7 +1,7 @@
 import { Client } from "@libsql/client/web";
 
 export async function getCareersByFaculty(faculty: string, db: Client) {
-  const query = await db.execute(`SELECT * FROM career WHERE id = ${faculty}`)
+  const query = await db.execute(`SELECT * FROM career WHERE faculty_id = ${faculty};`)
   if (query.rows.length === 0) {
     return {
       success: false,
