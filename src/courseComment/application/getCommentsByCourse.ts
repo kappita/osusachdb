@@ -53,11 +53,12 @@ export async function getCommentsByCourse(body: any, db: Client, env: Bindings) 
     }
   }
   const filtered = response.data.map(e => {
+    const new_element = {... e}
     if (e.is_anonymous) {
-      e.user_name = "Anónimo",
-      e.user_profile_img = "https://images.nightcafe.studio//assets/profile.png?tr=w-1600,c-at_max"
+      new_element.user_name = "Anónimo",
+      new_element.user_profile_img = "https://images.nightcafe.studio//assets/profile.png?tr=w-1600,c-at_max"
     }
-    return e
+    return new_element
   })
 
   return {
